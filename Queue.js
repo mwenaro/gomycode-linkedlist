@@ -9,14 +9,14 @@
     // enqueue
 
     enqueue(...data) {
-        return this.myArr.enqueue(...data);
+        return this.myArr.push(...data);
     }
 
 
     // dequeue
 
-    dequeue(...data) {
-        return this.myArr.dequeue(...data)
+    dequeue() {
+        return this.myArr.shift()
     }
 
     // peek
@@ -43,7 +43,7 @@
 
     print() {
         // let strData = this.dataArr.reduce((result,val)=>result += `${}`)
-        let strData = this.dataArr.join(" => ");
+        let strData = this.myArr.join(" => ");
         console.log(strData);
       }
 
@@ -52,3 +52,17 @@
     // clear
  }
 
+ let q = new Queue()
+ q.enqueue(12)
+ q.enqueue(20)
+ q.enqueue(31)
+ q.enqueue(2)
+ q.enqueue(44)
+
+
+ q.print()
+
+ q.dequeue()
+ q.print()
+
+module.exports= Queue
