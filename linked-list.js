@@ -53,7 +53,7 @@ let current = this.head
        
     }
 
-
+//  addAt
     addAt(data, index){
      if(index < 0 || index > this.length) {console.log("Invalid index");return;}
         
@@ -107,6 +107,7 @@ let current = this.head
 }
 
 
+// output
 
 let ll = new LinkedList()
 ll.addToTail(1)
