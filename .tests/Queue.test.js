@@ -26,7 +26,7 @@ describe('Queue', () => {
 
   test('dequeue method', () => {
     stack.enqueue(10, 20, 30);
-    expect(stack.dequeue()).toBe(30);
+    expect(stack.dequeue()).toBe(10);
     expect(stack.size()).toBe(2);
   });
 

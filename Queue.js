@@ -1,5 +1,6 @@
             // FIFO
 
+
  class Queue{
     constructor(){
         this.myArr = [];
