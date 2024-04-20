@@ -1,69 +1,65 @@
-            // FIFO
+// FIFO
 
+class Queue {
+  constructor() {
+    this.myArr = [];
+  }
 
- class Queue{
-    constructor(){
-        this.myArr = [];
-    } 
+  // enqueue
 
+  enqueue(...data) {
+    return this.myArr.push(...data);
+  }
 
-    // enqueue
+  // dequeue
 
-    enqueue(...data) {
-        return this.myArr.push(...data);
-    }
+  dequeue() {
+    return this.myArr.shift();
+  }
 
+  // peek
 
-    // dequeue
+  peek() {
+    let lastVal = this.myArr[this.myArr.length - 1];
 
-    dequeue() {
-        return this.myArr.shift()
-    }
+    return lastVal ?? null;
+  }
 
-    // peek
+  // isEmpty
 
-    peek() {
-        let lastVal = this.myArr[this.myArr.length - 1];
-    
-        return lastVal ?? null;
-      }
+  isEmpty() {
+    return this.myArr.length === 0;
+  }
 
-    // isEmpty
+  // size
 
-    isEmpty() {
-        return this.myArr.length === 0;
-    }
+  size() {
+    return this.myArr.length;
+  }
 
-    // size
+  // print
 
-    size() {
-        return this.myArr.length;
-    }
+  print() {
+    // let strData = this.dataArr.reduce((result,val)=>result += `${}`)
+    let strData = this.myArr.join(" => ");
+    console.log(strData);
+  }
 
-    // print
+  // front
 
-    print() {
-        // let strData = this.dataArr.reduce((result,val)=>result += `${}`)
-        let strData = this.myArr.join(" => ");
-        console.log(strData);
-      }
+  // clear
+}
 
-    // front
+let q = new Queue();
+q.enqueue(12);
+q.enqueue(20);
+q.enqueue(31);
+q.enqueue(2);
+q.enqueue(44);
 
-    // clear
- }
+q.print();
 
- let q = new Queue()
- q.enqueue(12)
- q.enqueue(20)
- q.enqueue(31)
- q.enqueue(2)
- q.enqueue(44)
+q.dequeue();
+q.print();
 
-
- q.print()
-
- q.dequeue()
- q.print()
-
-module.exports= Queue
+module.exports = Queue;
